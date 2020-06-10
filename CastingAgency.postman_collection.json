@@ -1,0 +1,563 @@
+{
+	"info": {
+		"_postman_id": "47242122-a075-42bd-82fc-b81739de24a0",
+		"name": "CastingAgency",
+		"description": "Includes CRUD endpoints for movies and actors for three roles: casting assistant, casting director and executive producer.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "GET_movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "No authorization",
+			"auth": {
+				"type": "noauth"
+			},
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Assistant",
+			"item": [
+				{
+					"name": "GET_movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Mr X\",\n\t\"director\": \"Steven\",\n\t\"year\": 2020\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Marilyn\",\n\t\"gender\": \"female\",\n\t\"age\": 38\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjBRZFpBbXF2Rl9WYVo5bTJCX0hicyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtamFwcC5hdXRoMC5jb20vIiwic3ViIjoiOUp6U2d0QkRvaDVpMEZZa2V5c1lyTW5iRElSY1Z4ajNAY2xpZW50cyIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU5MTc1MzIwOSwiZXhwIjoxNTkxODM5NjA5LCJhenAiOiI5SnpTZ3RCRG9oNWkwRllrZXlzWXJNbmJESVJjVnhqMyIsInNjb3BlIjoiZ2V0Om1vdmllcyBnZXQ6YWN0b3JzIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwicGVybWlzc2lvbnMiOlsiZ2V0Om1vdmllcyIsImdldDphY3RvcnMiXX0.G96C1sC9c0t0rhL8wQewLeRaOxnp4-xTXLnExNGd8jJkqxc0rqlCwBtzWsme3gyApjIaCcyNvAHo8bSs8VvFd-UtrIvTbjw7rKLA_hXVYiSumzRT7nCFR_Zuu25NZ5lvgMqhrUabWv5EAuCweB3_xx4ZpsEcg2vEDJ0526xXRa81l_on46d7cHMKqL_rbdOYfHwpulcv7vUo6hvYpcPO12EcXndsgRgHGwMJ1mNmdqc5IqAo1cR4irulYqDJPaT_lpfy8EOUAl2Ep2VcRqQjBbDFifN7V6SvZtfdjwJj_zQoVAnT7tozE12sgo0Botk9hjECNfxYrYTQhIFFStoRQg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7c338b50-878d-49fd-8e20-036acac4402a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ba3647a6-3418-41b0-a52e-474208ace5e5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Director",
+			"item": [
+				{
+					"name": "GET_movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Marilyn\",\n\t\"gender\": \"female\",\n\t\"age\": 38\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Mr X\",\n\t\"director\": \"Steven\",\n\t\"year\": 2020\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjBRZFpBbXF2Rl9WYVo5bTJCX0hicyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtamFwcC5hdXRoMC5jb20vIiwic3ViIjoibWZJREpud1lxQnU2T3JCVUVuTnRabDMza2VRcXFURFBAY2xpZW50cyIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU5MTc1MzQzMiwiZXhwIjoxNTkxODM5ODMyLCJhenAiOiJtZklESm53WXFCdTZPckJVRW5OdFpsMzNrZVFxcVREUCIsInNjb3BlIjoiZ2V0Om1vdmllcyBnZXQ6YWN0b3JzIHBvc3Q6YWN0b3JzIHBhdGNoOm1vdmllcyBwYXRjaDphY3RvcnMgZGVsZXRlOmFjdG9ycyIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsInBlcm1pc3Npb25zIjpbImdldDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwicG9zdDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJkZWxldGU6YWN0b3JzIl19.fzoqHRJE4t_x7t-t9uFRJ8pQwnDZwkTQgA7a4MkSiGF7PwWHHG6GUQV30JhnHSDuGs8izy8jnVjrylAwRa9_5_5nmTcAPFuQ5fuLSGJDdfiLWXCvm1gHaNJ2_Wtpb92ud4PdqrVXajgJkJtFGaAUfHSpLs68F9PP0yqbGI3TqSACDQO_gMS2rm8rySIclq9jzeux0OmxX0QDi9b4OOnypWMZ-WmP1Vya25guA-U8R2RzqGEs3RP0O3ABmwQHAZfNjUeWn8vN02innTlAmztbkAC6FdmIP8AmAQpvWrxc3hImxzvuLSBZ9AwqSQ2hW_CmqPP05STHbhInF5Y0pVOLnQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fff983ee-a7d5-4301-9ce7-d205e089895a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "337db9f4-f9c1-46fc-a72c-f99aac508f38",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Producer",
+			"item": [
+				{
+					"name": "POST_movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Mr X\",\n\t\"director\": \"Steven\",\n\t\"year\": 2020\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH_movies",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"year\": 2021\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_movies",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST_actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Robert\",\n\t\"gender\": \"male\",\n\t\"age\": 32\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH_actors",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"age\": 33\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE_actors",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjBRZFpBbXF2Rl9WYVo5bTJCX0hicyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQtamFwcC5hdXRoMC5jb20vIiwic3ViIjoicHRSb1JyVXJOVVhSbTk2Sk00ZEYxd2xUNjloUUkxN2dAY2xpZW50cyIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU5MTc1MzQ5OSwiZXhwIjoxNTkxODM5ODk5LCJhenAiOiJwdFJvUnJVck5VWFJtOTZKTTRkRjF3bFQ2OWhRSTE3ZyIsInNjb3BlIjoiZ2V0Om1vdmllcyBnZXQ6YWN0b3JzIHBvc3Q6bW92aWVzIHBvc3Q6YWN0b3JzIHBhdGNoOm1vdmllcyBwYXRjaDphY3RvcnMgZGVsZXRlOm1vdmllcyBkZWxldGU6YWN0b3JzIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwicGVybWlzc2lvbnMiOlsiZ2V0Om1vdmllcyIsImdldDphY3RvcnMiLCJwb3N0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImRlbGV0ZTphY3RvcnMiXX0.1kUvLSfY-lEPEeID8srwdhzdGK--ao4Ja4zqVwbKMnjfCCfpKkdAuBKzonDZtofSY--7uu7ZyePhY3ca8Jcf4ri6VuoKL1HbRxF1eAG_cOOAqbTVUFaa_Aow1lGR_7kMMo6-S2ba9jH0TT9POyFVeVl9gTo3jkxs1ulAzRydA6stiCvAkdQdoWo5acHBUd5fzUCjAr4p51nsF8Aq-_AosplHmuTJCqoGkKI2wkDrYENdWhGnQaQBJsXTSdgqLDv8NYdmDI3tpdcVkwgRiEDsqAqbDzUkdX4Ns43w0BWGavcBwr2Ykjr3ZIQNPu5h_GqPQpR-fXp5FihLmWXTogG5rw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "10e9af4b-0925-41e5-84e7-da8212594571",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "46694ab8-c92a-4820-827d-e6bfc71d823e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
