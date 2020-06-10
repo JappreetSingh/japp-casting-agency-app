@@ -1,4 +1,4 @@
-The API provides following Endpoints to perform CRUD (Create Read Update Delete) operations on the database of the Casting Agency for model entities Actor and Movie:
+The API provides following Endpoints to perform CRUD (Create Read Update Delete) operations on the database of a Casting Agency for model entities Actor and Movie:
 GET '/actors'
 GET '/movies'
 POST '/actors'
@@ -8,6 +8,8 @@ PATCH '/movies/<id>'
 DELETE '/actors/<id>'
 DELETE '/movies/<id>'
 GET '/token/<level>'
+
+This API is live and hosted on Heroku: https://japp-casting-agency-app.herokuapp.com. Refer to the dependencies in requirements.txt for local running of the app.
 
 Corresponding to the model entities, the database has two tables 'actors' and 'movies' respectively.
 The API provides role-based permissions. There are three roles defined:
@@ -38,6 +40,9 @@ All the API endpoints require a Bearer type access-token with the appropriate pe
 - Returns on success:
     A Bearer token string for that role or permission level.
 - Returns None if called with an invalid level (outside of range 1 - 3) or if an exception is encountered.
+The unit tests use this to get the tokens for each of the role levels.
+
+Alternatively, the user can use the tokens defined as TOKEN_LEVEL1, TOKEN_LEVEL2 and TOKEN_LEVEL3 specified in setup.sh. This file also sets other environment and secret variables, some of which are used by this endpoint.
  
 
 Error Codes returned by API:
